@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "esformatter-quotes",
+    "esformatter-braces",
+    "esformatter-eol-last",
+    "esformatter-use-strict",
+    "esformatter-remove-trailing-commas"
+  ],
+  "quotes": {
+    "type": "single"
+  }
+}
