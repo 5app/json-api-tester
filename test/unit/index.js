@@ -3,7 +3,7 @@
 /*eslint-env node, mocha */
 
 var assert = require('chai').assert;
-var jsonApiTester = require('..');
+var jsonApiTester = require('../..');
 
 
 describe('json-api-tester', function() {

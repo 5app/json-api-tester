@@ -44,6 +44,11 @@ The name is just there to identify the test in console log outputs.
       }
     });
 
+    testObjArr.push({
+      name: "do nothing for 5 seconds",
+      wait: 5000
+    });
+
 ## Run the tests
 
     exports.run = function(callback) {

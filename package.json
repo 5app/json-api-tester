@@ -4,8 +4,8 @@
   "description": "test json ajax calls using a simple json file",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha",
-    "cover": "istanbul cover .\\node_modules\\mocha\\bin\\_mocha",
+    "test": "mocha -- test/unit && node test/regression/index.js",
+    "cover": "istanbul cover .\\node_modules\\mocha\\bin\\_mocha -- test/unit",
     "lint": "eslint lib/ test/ && jscs lib/ test/",
     "fix": "jsfmt lib/ test/ -w",
     "docs": "jsdoc -d docs --pedantic -c jsdoc.json lib/"
