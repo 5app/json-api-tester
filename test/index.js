@@ -45,13 +45,6 @@ describe('json-api-tester', function() {
 
   });
 
-  describe('processCmdLineArgs', function() {
-
-    it('should error with no args', function() {
-      assert.throw(function() {
-        jsonApiTester.processCmdLineArgs(['node', 'index.js']);
-      }, Error, 'expected a server name');
-    });
-  });
+  // ------------------------------------------------------------------------ //
 
 });

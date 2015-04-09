@@ -12,15 +12,6 @@ It can handle posting files, waiting a set time for the back-end to finish proce
     npm install --save json-api-tester
 
 
-## Tests
-
-
-    npm test
-    npm run lint   # styleguide and code smells
-    npm run fix    # try to autofix styleguide errors
-    npm run cover  # create a code coverage report
-
-
 ## Usage
 
 
@@ -77,11 +68,25 @@ A more telling example:
     });
 
 
+
+## Tests and Development tools
+
+
+    npm test       # unittests (mocha) and integration tests (literate DOCS.js)
+    npm run lint   # styleguide and code smells
+    npm run fix    # try to autofix styleguide errors
+    npm run cover  # create a code coverage report
+    npm run docs   # create HTML documentation
+
+
 ## Contributing
 
 Make sure your code:
 
-- that all new code has tests added
+- that all new code has unit tests added
+- that all new/changed functionality is documented in DOCS.js (this may involve
+  changing the test/docs.js server which runs the code from DOCS.js as the
+  integration tests.)
 - that you match the styleguide `npm run lint`
 - that all tests pass `npm test`
 
