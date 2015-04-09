@@ -39,7 +39,7 @@ with some JSON that has a message of "hello world".
     testObjArr.push({
       name: "basic get",
       method: "GET",
-      url: "hello",
+      url: "/hello",
       returns: {
         message: "hello world"
       }
@@ -58,7 +58,7 @@ care what is in the body of the response.
     testObjArr.push({
       name: "not found",
       method: "POST",
-      url: "not-found",
+      url: "/not-found",
       status: 404,
       contentType: ja.dontCare,
       returns: ja.dontCare
@@ -70,13 +70,35 @@ different timeout, here we choose 5 seconds.
     testObjArr.push({
       name: "new timeout value",
       method: "GET",
-      url: "hello",
+      url: "/hello",
       timeout: 5000,
       returns: {
         message: "hello world"
       }
     });
 
+Finally we show off a few of the features of json-assert with a bigger request.
+
+    testObjArr.push({
+      url: "/users/123",
+      method: "PUT",
+      args: {
+        name: "bob",
+        size: 15,
+        hair: "red",
+        height: 162
+      },
+      returns: {
+        friends: ja.matchType('object'),
+        size: 15,
+        dob: ja.dontCare,
+        pet: {
+          type: "cat",
+          age: ja.matchType('number'),
+          collar: ja.optional
+        }
+      }
+    })
 
 ## Run the tests
 

@@ -19,6 +19,19 @@ app.get('/hello', function(req, res) {
   });
 });
 
+
+app.put('/users/:id', function(req, res) {
+  res.json({
+    friends: ['mike', 'bill'],
+    size: 15,
+    dob: '12/1/1985',
+    pet: {
+      type: 'cat',
+      age: 7
+    }
+  });
+});
+
 /*
   as this is the last normal route in the list it gets called if there are no
   other routes defined. Hence we can use this as the 404 handler.
