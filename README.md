@@ -18,6 +18,7 @@ It can handle posting files, waiting a set time for the back-end to finish proce
     npm test
     npm run lint   # styleguide and code smells
     npm run fix    # try to autofix styleguide errors
+    npm run cover  # create a code coverage report
 
 
 ## Usage

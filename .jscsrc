@@ -1,7 +1,6 @@
 {
     "excludeFiles": [
-      "node_modules/**",
-      "lib/utils/make-app.js"
+      "node_modules/**"
     ],
     "disallowSpacesInNamedFunctionExpression": {
         "beforeOpeningRoundBrace": true

@@ -4,9 +4,10 @@
   "description": "test json ajax calls using a simple json file",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test/",
-    "lint": "node_modules/eslint/bin/eslint.js . && node_modules/jscs/bin/jscs .",
-    "fix": "node_modules/jsfmt/bin/jsfmt lib/ test/ -w"
+    "test": "mocha",
+    "cover": "istanbul cover .\\node_modules\\mocha\\bin\\_mocha",
+    "lint": "eslint . && jscs . && coverage-check",
+    "fix": "jsfmt lib/ test/ -w"
   },
   "keywords": [
     "json",
@@ -24,14 +25,15 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
-    "mocha": "^2.2.1",
-    "eslint": "^0.18.0",
-    "jscs": "^1.12.0",
-    "jsfmt": "^0.4.1",
     "esformatter-braces": "^1.0.0",
     "esformatter-eol-last": "^1.0.0",
     "esformatter-quotes": "^1.0.1",
     "esformatter-remove-trailing-commas": "0.0.1",
-    "esformatter-use-strict": "^2.0.1"
+    "esformatter-use-strict": "^2.0.1",
+    "eslint": "^0.18.0",
+    "istanbul": "^0.3.13",
+    "jscs": "^1.12.0",
+    "jsfmt": "^0.4.1",
+    "mocha": "^2.2.1"
   }
 }

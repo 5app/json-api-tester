@@ -1,4 +1,5 @@
 'use strict';
+
 /*eslint-env node, mocha */
 
 var assert = require('chai').assert;
