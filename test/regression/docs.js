@@ -2,8 +2,10 @@
 /*eslint-env node */
 
 var express = require('express');
-var app = express();
+var busboy = require('connect-busboy');
 var docs = require('literate')('./DOCUMENTATION');
+var app = express();
+
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/hello', function(req, res) {
@@ -31,6 +33,45 @@ app.put('/users/:id', function(req, res) {
     }
   });
 });
+
+
+/*
+ this must be given two files (called key and cert) and a password.
+*/
+app.post('/files', busboy({
+  immediate: true
+}), function(req, res, next) {
+  if (req.busboy) {
+    var files = {};
+    var fields = {};
+
+    req.busboy.on('file', function(fieldname, file, filename) {
+      // console.log('file', fieldname);
+      files[fieldname] = filename;
+      file.on('data', function() {});
+      file.on('end', function() {});
+    });
+
+    req.busboy.on('field', function(fieldname, value) {
+      // console.log('field', fieldname, value);
+      fields[fieldname] = value;
+    });
+
+    req.busboy.on('finish', function() {
+      // console.log('finish', files, fields);
+      if (!files.cert || !files.key || !fields.password) {
+        return next(new Error('expected files'));
+      }
+      return res.json({
+        message: 'ok'
+      });
+    });
+
+  } else {
+    return next(new Error('expected files'));
+  }
+});
+
 
 /*
   as this is the last normal route in the list it gets called if there are no

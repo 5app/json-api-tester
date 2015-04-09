@@ -31,8 +31,6 @@ functions (you will see these later).
     var testObjArr = [];
 
 
-### Basic Get
-
 Here we check that calling GET http://localhost:3000/hello returns successfully
 with some JSON that has a message of "hello world".
 
@@ -77,9 +75,30 @@ different timeout, here we choose 5 seconds.
       }
     });
 
+We can use this up upload files too. Here we are uploading two files as well as
+some text arguments.
+
+    testObjArr.push({
+      name: "post two files",
+      method: "POST",
+      url: "/files",
+      timeout: 2000,
+      args: {
+        password: 'secret-key'
+      },
+      files: {
+        key: 'README.md',
+        cert: 'README.md'
+      },
+      returns: {
+        message: "ok"
+      }
+    });
+
 Finally we show off a few of the features of json-assert with a bigger request.
 
     testObjArr.push({
+      name: "update a user",
       url: "/users/123",
       method: "PUT",
       args: {
