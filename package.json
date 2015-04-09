@@ -1,6 +1,6 @@
 {
   "name": "json-api-tester",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "test json ajax calls using a simple json file",
   "main": "lib/index.js",
   "scripts": {
@@ -9,6 +9,13 @@
     "lint": "eslint lib/ test/ && jscs lib/ test/",
     "fix": "jsfmt lib/ test/ -w",
     "docs": "jsdoc -d docs --pedantic -c jsdoc.json lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/5app/json-api-tester.git"
+  },
+  "bugs": {
+    "url": "https://github.com/5app/json-api-tester/issues"
   },
   "keywords": [
     "json",
