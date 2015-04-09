@@ -33,21 +33,50 @@ functions (you will see these later).
 
 ### Basic Get
 
-The name is just there to identify the test in console log outputs.
+Here we check that calling GET http://localhost:3000/hello returns successfully
+with some JSON that has a message of "hello world".
 
     testObjArr.push({
       name: "basic get",
       method: "GET",
-      url: "hello/",
+      url: "hello",
       returns: {
         message: "hello world"
       }
     });
 
+A little hack to give the server some time to process things.
+
     testObjArr.push({
-      name: "do nothing for 5 seconds",
-      wait: 5000
+      name: "do nothing for half a second",
+      wait: 500
     });
+
+Test a POST to http://localhost:3000/not-found returns a status of 404, we don't
+care what is in the body of the response.
+
+    testObjArr.push({
+      name: "not found",
+      method: "POST",
+      url: "not-found",
+      status: 404,
+      contentType: ja.dontCare,
+      returns: ja.dontCare
+    });
+
+If there was a url that you know takes a while to return you can give it a
+different timeout, here we choose 5 seconds.
+
+    testObjArr.push({
+      name: "new timeout value",
+      method: "GET",
+      url: "hello",
+      timeout: 5000,
+      returns: {
+        message: "hello world"
+      }
+    });
+
 
 ## Run the tests
 
