@@ -9,7 +9,7 @@ It can handle posting files, waiting a set time for the back-end to finish proce
 ## Installation
 
 
-    npm install json-api-tester --save
+    npm install --save json-api-tester
 
 
 ## Tests
