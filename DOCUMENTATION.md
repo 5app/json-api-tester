@@ -30,6 +30,11 @@ functions (you will see these later).
 
     var testObjArr = [];
 
+Let's start by changing the default timeout. This is how long we will wait for a
+test before giving up. It defaults to 2 seconds but we want to be a bit
+stricter.
+
+    jsonApiTester.defaultTimeout = 1000;
 
 Here we check that calling GET http://localhost:3000/hello returns successfully
 with some JSON that has a message of "hello world".
