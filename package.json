@@ -1,6 +1,6 @@
 {
   "name": "json-api-tester",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "test json ajax calls using a simple json file",
   "main": "lib/index.js",
   "scripts": {
